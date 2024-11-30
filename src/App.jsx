@@ -9,39 +9,59 @@ import Workout from './Workout'
 import NutritionTrack from './Nutritiontrack'
 import Login from './Login'
 import Signup from './SignUp'
+import Progress from './Progress'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-     <h1>Stay Vigour</h1> 
-    <Router>
-      <nav>
-        
-          <button><Link to = "/mainPage">Home</Link></button>
-        
-        
-          <button><Link to = "/workout">Workout Plan</Link></button>
-        
+    <div>
+       <img src="/bg.webp" alt="Stay-Vigor Logo" className="background" />
       
-          <button><Link to = "/nutritionTrack">Nutrition Track</Link></button>
+   
+   
+     
+    <Router className = "route">
+      <div className='nav'>
+      <div className='left'>
+      <img src="/public/logo.webp" alt="Stay-Vigor Logo" className="logo" />
+      </div>
       
-      </nav>
+      
+     
+
+      <div className='right'> 
+      <nav className='right'>
+
+      <Link to = "/mainPage">Home</Link>
+      <Link to = "/workout">Workout Plan</Link>
+      <Link to = "/nutritionTrack">Nutrition Track</Link>
+      <Link to = "/dashboard">Dashboard</Link>
+      
+        </nav>
+        </div>
+         
+      
+     
+      </div>
+      <div>
       <Routes>
 
-        <Route path = "/mainpage" element = {<Home/>}/>
-        <Route path = "/login" element = {<Login/>}/>
-        <Route path = "/signup" element = {<Signup/>}/>
-        <Route path = "/workout" element = {<Workout/>} />
-        <Route path = "/nutritionTrack" element = {<NutritionTrack/>} />
+<Route path = "/mainpage" element = {<Home/>}/>
+<Route path = "/login" element = {<Login/>}/>
+<Route path = "/signup" element = {<Signup/>}/>
+<Route path = "/workout" element = {<Workout/>} />
+<Route path = "/nutritionTrack" element = {<NutritionTrack/>} />
+<Route path = "/dashboard" element = {<Progress/>} />
 
-      </Routes>
+</Routes>
+      </div>
+      
     </Router>
      
       
      
         
-    </>
+    </div>
   )
 }
 

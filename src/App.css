@@ -40,3 +40,62 @@
 .read-the-docs {
   color: #888;
 }
+/* App.css */
+.background {
+  position: fixed;  /* Fix it to the background */
+  top: 0;
+  left: 0;
+  width: 100%;  /* Take the full width of the screen */
+  height: 100vh;  /* Take the full height of the viewport */
+  object-fit: cover; /* Ensures the image covers the screen without stretching */
+  z-index: -1;  /* Ensure it stays behind other content */
+}
+
+.logo {
+  width: 50px; 
+  height: auto; 
+}
+
+.nav {
+  display: flex;               
+  justify-content: space-between; 
+  align-items: center;          
+             
+  background-color: #323338;      
+  color: white;               
+  position: fixed;           
+  width: 100%;                  
+  top: 0;     
+    
+  left: 0;                   
+}
+
+.left, .right {
+  padding: 2px;
+  cursor: pointer;
+}
+
+.left {
+  text-align: left; 
+}
+
+.right {
+  text-align: right; 
+  display: flex;
+  
+  justify-content: flex-end;
+}
+.right a {
+ 
+  color: rgb(255, 255, 255);           /* White text color */
+  padding: 10px;          /* Add some padding for spacing around text */
+  font-size: 16px;
+          /* Set a reasonable font size */
+}
+a:hover {
+  color: rgb(154, 231, 173);
+}
+.route{
+   display: flex;
+   
+}
