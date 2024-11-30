@@ -10,6 +10,10 @@ import NutritionTrack from './Nutritiontrack'
 import Login from './Login'
 import Signup from './SignUp'
 import Progress from './Progress'
+import Community from './Community'
+import Chat from './components/Chat'
+import Challenges from './components/Challenges'
+import Feed from './components/Feed'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -36,7 +40,7 @@ function App() {
       <Link to = "/workout">Workout Plan</Link>
       <Link to = "/nutritionTrack">Nutrition Track</Link>
       <Link to = "/dashboard">Dashboard</Link>
-      
+      <Link to = "/community">Community</Link>
         </nav>
         </div>
          
@@ -52,6 +56,11 @@ function App() {
 <Route path = "/workout" element = {<Workout/>} />
 <Route path = "/nutritionTrack" element = {<NutritionTrack/>} />
 <Route path = "/dashboard" element = {<Progress/>} />
+<Route path = "/community" element = {<Community/>} />
+<Route path="/feed" element={<Feed />} />
+            <Route path="/chat" element={<Chat />} />
+            <Route path="/challenges" element={<Challenges />} />
+
 
 </Routes>
       </div>
