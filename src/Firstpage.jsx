@@ -5,16 +5,20 @@ function Firstpage(){
         <>
         <form>
             <p>
-                Email
+                Email:
             </p>
             <input type= "email" name= "email" placeholder="Jerin@gmail.com" />
             <p>
-                Password
+                Password:
             </p>
             <input type= "password" name= "password" placeholder="as^5+@ghifht?" />
         </form>
         <button>Submit</button>
+        <p>Create An account? 
+            <a href="/signup">Signup</a>
+        </p>
         </>
+
 
     );
 }
