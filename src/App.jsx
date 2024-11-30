@@ -2,11 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Firstpage from './Firstpage'
+import Firstpage from './Login'
 import Home from './Home'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Workout from './Workout'
 import NutritionTrack from './Nutritiontrack'
+import Login from './Login'
+import Signup from './SignUp'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -28,7 +30,8 @@ function App() {
       <Routes>
 
         <Route path = "/mainpage" element = {<Home/>}/>
-        <Route path = "/firstpage" element = {<Firstpage/>}/>
+        <Route path = "/login" element = {<Login/>}/>
+        <Route path = "/signup" element = {<Signup/>}/>
         <Route path = "/workout" element = {<Workout/>} />
         <Route path = "/nutritionTrack" element = {<NutritionTrack/>} />
 

@@ -11,6 +11,7 @@ function NutritionTrack(){
         ([
           
             {id:1, Food: 'Fish', Quantity: "10g", Calories:"20j" },
+            
 
         ]);
     }, []);
