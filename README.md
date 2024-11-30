@@ -10,3 +10,11 @@ Currently, two official plugins are available:
 =======
 # Stay-Vigour
 >>>>>>> 02bc8768f38b8674c8aff8999757e151e4b4a7a6
+
+
+#run Backend
+
+cd backend
+npm i
+npm run init-db
+npm run start
