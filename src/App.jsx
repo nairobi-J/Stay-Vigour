@@ -5,29 +5,32 @@ import './App.css'
 import Firstpage from './Firstpage'
 import Home from './Home'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Workout from './Workout'
+import NutritionTrack from './Nutritiontrack'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     Stay Vigour 
+     <h1>Stay Vigour</h1> 
     <Router>
-      {/* <nav>
-        <ul>
-          <li><Link to = "/mainPage">Home</Link></li>
-        </ul>
-        <ul>
-          <li><Link to = "/firstPage">Firstpage</Link></li>
-        </ul>
-        <ul>
-          <li><Link to = "/mainPage">Home</Link></li>
-        </ul>
-      </nav> */}
+      <nav>
+        
+          <button><Link to = "/mainPage">Home</Link></button>
+        
+        
+          <button><Link to = "/workout">Workout Plan</Link></button>
+        
+      
+          <button><Link to = "/nutritionTrack">Nutrition Track</Link></button>
+      
+      </nav>
       <Routes>
 
         <Route path = "/mainpage" element = {<Home/>}/>
         <Route path = "/firstpage" element = {<Firstpage/>}/>
-
+        <Route path = "/workout" element = {<Workout/>} />
+        <Route path = "/nutritionTrack" element = {<NutritionTrack/>} />
 
       </Routes>
     </Router>
