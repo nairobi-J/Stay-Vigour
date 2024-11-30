@@ -2,22 +2,30 @@ import { useState } from "react";
 
 
 
-const Preferenceform=(setPreferences)=> {
+const Preferenceform=({preferences,setPreferences})=> {
 
     const handleDiertaryChange = (event) => {
-        setDietaryRestriction(event.target.value)
+       setPreferences((prevPreferences) => ({
+        ...prevPreferences,
+        dietaryRestriction: event.target.value
+       }))
     }
     const handleWorkoutTypesChange = (event) => {
         const {value, checked} = event.target;
-
-        setworkoutTypes((prevTypes) => {
-            if(checked) {
-                return [...prevTypes, value];
+        setPreferences((prevPreferences) =>{
+            if(checked){
+                return {
+                    ...prevPreferences,
+                    workoutTypes:[...prevPreferences.workoutTypes, value]
+                }
             }
             else {
-                prevTypes.filter((type) => type != value)
+                return {
+                    ...prevPreferences,
+                    workoutTypes:prevPreferences.workoutTypes.filter((type) => type !== value )
+                }
             }
-        });
+        } )
     }
     return (
         
@@ -73,7 +81,7 @@ const Preferenceform=(setPreferences)=> {
                 <input 
                 type = "radio"
                 value = "vegetarian"
-
+                checked={preferences.dietaryRestriction === "vegetarian"}
             onChange={handleDiertaryChange}
 
                 /> Vegetarian
@@ -82,7 +90,7 @@ const Preferenceform=(setPreferences)=> {
                 <input 
                 type = "radio"
                 value = "keto"
-
+                checked={preferences.dietaryRestriction === "keto"}
             onChange={handleDiertaryChange}
                 
                 />Keto
@@ -91,7 +99,7 @@ const Preferenceform=(setPreferences)=> {
                 <input 
                 type = "radio"
                 value = "paleo"
-
+                checked={preferences.dietaryRestriction === "paleo"}
             onChange={handleDiertaryChange}
                 
                 /> Paleo
@@ -100,7 +108,8 @@ const Preferenceform=(setPreferences)=> {
                 <input 
                 type = "radio"
                 value = "none"
-
+                //for radio
+                checked={preferences.dietaryRestriction === "none"}
             onChange={handleDiertaryChange}
                 
                 /> No restrictions

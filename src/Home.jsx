@@ -20,12 +20,15 @@ function  Home(){
         //send data to server
         console.log(personalInfo, fitnessgoals, preferences);
     }
+
+
+    //database er code eikhne lekhish!!!
     return(
       <div>
       
      <PersonalInfo setPersonalInfo = {setPersonalInfo}/>
      <Fitnessgoals setFitnessGoals = {setFitnessGoals}/>
-     <Preferenceform setPreferences = {setPreferences}/>
+     <Preferenceform preferences = {preferences} setPreferences = {setPreferences}/>
      <button onClick={handleSubmit}>Save</button>
       </div>
     );
