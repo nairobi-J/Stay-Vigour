@@ -1,12 +1,11 @@
 import { useState } from "react";
 
-const PersonalInfo = () => {
-    const [age, setAge] = useState("");
-    const [weight, setWeight] = useState("");
-    const [fitnessLevel, setFitnessLevel] = useState("");
-    const handleAgeChange = (e) => setAge(e.target.value);
-    const handleWeightChange = (e) => setWeight(e.target.value);
-    const handleFitnessChange = (e) => setFitnessLevel(e.target.value);
+const PersonalInfo = ({setPersonalInfo})=> {
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setPersonalInfo((prevState) => ({...prevState, [name]:value}))
+    }
     return (
         <form>
         <h3>Personal Informations</h3>
@@ -14,8 +13,8 @@ const PersonalInfo = () => {
             <input
             type = "number"
             placeholder="Enter your age"
-            value = {age}
-            onChange = {handleAgeChange}
+            name="age"
+            onChange = {handleChange}
             required
             
             />
@@ -24,14 +23,14 @@ const PersonalInfo = () => {
             <input
             type = "number"
             placeholder="Enter your Weight"
-            value = {weight}
-            onChange = {handleWeightChange}
+            name="weight"
+            onChange = {handleChange}
             required
             
             />
         </p>
         <p>Fitness Level:
-           <select value={fitnessLevel} onChange={handleFitnessChange}  required>
+           <select  onChange={handleChange} name="fitnessLevel" required>
   <option value="">Select your fitness level</option>  
   <option value="beginner">Beginner</option>   
   <option value="beginner">Intermediate</option>    
