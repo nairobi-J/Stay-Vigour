@@ -24,8 +24,8 @@ db.connect((err) => {
 });
 
 // // Routes
-// app.use('/api/users', userRoutes);
-// app.use('/api/fitness', fitnessRoutes);
+ app.use('/api/users', userRoutes);
+ app.use('/api/fitness', fitnessRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
